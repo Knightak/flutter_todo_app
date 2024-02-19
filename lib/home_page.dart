@@ -43,7 +43,6 @@ class _HomeState extends State<Home> {
   }
 
   // save new task
-
   void saveNewTask() {
     setState(() {
       TodoList.add([_controller.text, false]);
