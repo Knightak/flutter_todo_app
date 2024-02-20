@@ -23,7 +23,6 @@ class _HomeState extends State<Home> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     //for the 1st time create defult data
     if (_myBox.get('TODOLIST') == null) {
