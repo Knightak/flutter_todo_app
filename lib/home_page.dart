@@ -83,14 +83,14 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.purple,
       appBar: AppBar(
-        title: Text('TO DO'),
+        title: const Text('TO DO'),
         centerTitle: true,
         elevation: 2,
-        backgroundColor: Color.fromARGB(255, 242, 168, 255),
+        backgroundColor: const Color.fromARGB(255, 242, 168, 255),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => createNewTask(context),
-        backgroundColor: Color.fromARGB(255, 242, 168, 255),
+        backgroundColor: const Color.fromARGB(255, 242, 168, 255),
         shape: const CircleBorder(),
         child: const Icon(
           Icons.add,

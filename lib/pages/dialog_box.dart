@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 import 'package:flutter_todo_app/pages/app_button.dart';
 
@@ -35,7 +37,10 @@ class Dialogbox extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 //save button
-                AppButton(text: "Save", onPressed: onSave),
+                AppButton(
+                  text: "Save",
+                  onPressed: onSave,
+                ),
                 const SizedBox(
                   width: 10,
                 ),

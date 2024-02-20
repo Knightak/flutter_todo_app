@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
@@ -28,9 +30,10 @@ class TodoTile extends StatelessWidget {
           )
         ]),
         child: Container(
-          padding: EdgeInsets.all(15),
+          width: double.infinity,
+          padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 242, 168, 255),
+            color: const Color.fromARGB(255, 242, 168, 255),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Row(
