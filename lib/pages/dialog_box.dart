@@ -5,16 +5,17 @@ class Dialogbox extends StatelessWidget {
   final controller;
   VoidCallback onSave;
   VoidCallback onCancel;
-  Dialogbox(
-      {super.key,
-      required this.controller,
-      required this.onSave,
-      required this.onCancel});
+  Dialogbox({
+    super.key,
+    required this.controller,
+    required this.onSave,
+    required this.onCancel,
+  });
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Color.fromARGB(255, 242, 168, 255),
+      backgroundColor: const Color.fromARGB(255, 242, 168, 255),
       content: Container(
         height: 120,
         child: Column(
@@ -23,7 +24,7 @@ class Dialogbox extends StatelessWidget {
             //user input
             TextField(
               controller: controller,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: "Add a new task",
               ),
@@ -35,7 +36,7 @@ class Dialogbox extends StatelessWidget {
               children: [
                 //save button
                 AppButton(text: "Save", onPressed: onSave),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 //cancel button

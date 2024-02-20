@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
       builder: (context) {
         return Dialogbox(
           controller: _controller,
-          onSave: saveNewTask,
+          onSave: () => saveNewTask(this.context),
           onCancel: () => Navigator.of(context).pop(),
         );
       },
@@ -43,12 +43,14 @@ class _HomeState extends State<Home> {
   }
 
   // save new task
-  void saveNewTask() {
+  Future<void> saveNewTask(
+    context,
+  ) async {
     setState(() {
       TodoList.add([_controller.text, false]);
       _controller.clear();
     });
-    Navigator.of(context as BuildContext).pop();
+    Navigator.pop(context as BuildContext, true);
   }
 
   @override
@@ -63,11 +65,11 @@ class _HomeState extends State<Home> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => createNewTask(context),
-        child: Icon(
+        backgroundColor: Color.fromARGB(255, 242, 168, 255),
+        shape: const CircleBorder(),
+        child: const Icon(
           Icons.add,
         ),
-        backgroundColor: Color.fromARGB(255, 242, 168, 255),
-        shape: CircleBorder(),
       ),
       body: ListView.builder(
         itemCount: TodoList.length,
