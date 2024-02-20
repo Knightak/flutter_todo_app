@@ -15,11 +15,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   //text controlar
   final _controller = TextEditingController();
-  // common list
-  List TodoList = [
-    ['Do Something New', false],
-    ['Learn Something New', false],
-  ];
 
   //checkbox taped
   void checkBoxChanged(bool? value, index) {
