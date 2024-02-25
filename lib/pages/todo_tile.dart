@@ -1,5 +1,7 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
@@ -30,30 +32,41 @@ class TodoTile extends StatelessWidget {
           )
         ]),
         child: Container(
-          width: double.infinity,
           padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
             color: const Color.fromARGB(255, 242, 168, 255),
             borderRadius: BorderRadius.circular(8),
           ),
-          child: Row(
-            children: [
-              //checkbox
-              Checkbox(
-                value: taskCompleted,
-                onChanged: onChanged,
-                activeColor: Colors.green,
-              ),
+          child: SizedBox(
+            child: SingleChildScrollView(
+              //scrollDirection: Axis.horizontal,
+              child: Row(
+                textDirection: TextDirection.ltr,
+                verticalDirection: VerticalDirection.down,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  //checkbox
+                  Checkbox(
+                    visualDensity: VisualDensity.compact,
+                    value: taskCompleted,
+                    onChanged: onChanged,
+                    activeColor: Colors.green,
+                  ),
 
-              // task name
-              Text(
-                taskName,
-                style: TextStyle(
-                    decoration: taskCompleted
-                        ? TextDecoration.lineThrough
-                        : TextDecoration.none),
+                  // task name
+                  Expanded(
+                    child: Text(
+                      taskName,
+                      style: TextStyle(
+                        decoration: taskCompleted
+                            ? TextDecoration.lineThrough
+                            : TextDecoration.none,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

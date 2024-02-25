@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_todo_app/data/database.dart';
 import 'package:flutter_todo_app/pages/dialog_box.dart';
@@ -67,7 +68,9 @@ class _HomeState extends State<Home> {
       Navigator.pop(context as BuildContext, true);
       db.updateDataBase();
     } else {
-      print("the input box can't be blank");
+      if (kDebugMode) {
+        print("the input box can't be blank");
+      }
     }
   }
 
