@@ -18,7 +18,7 @@ class Dialogbox extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       backgroundColor: const Color.fromARGB(255, 242, 168, 255),
-      content: Container(
+      content: SizedBox(
         height: 120,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -47,7 +47,7 @@ class Dialogbox extends StatelessWidget {
                 //cancel button
                 AppButton(text: "Cancel", onPressed: onCancel),
               ],
-            )
+            ),
           ],
         ),
       ),

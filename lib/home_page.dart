@@ -1,8 +1,5 @@
 // ignore_for_file: non_constant_identifier_names
 
-import 'dart:html';
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_todo_app/data/database.dart';
 import 'package:flutter_todo_app/pages/dialog_box.dart';
@@ -62,12 +59,16 @@ class _HomeState extends State<Home> {
   Future<void> saveNewTask(
     context,
   ) async {
-    setState(() {
-      db.TodoList.add([_controller.text, false]);
-      _controller.clear();
-    });
-    Navigator.pop(context as BuildContext, true);
-    db.updateDataBase();
+    if (_controller.text != '') {
+      setState(() {
+        db.TodoList.add([_controller.text, false]);
+        _controller.clear();
+      });
+      Navigator.pop(context as BuildContext, true);
+      db.updateDataBase();
+    } else {
+      print("the input box can't be blank");
+    }
   }
 
   // delete task
